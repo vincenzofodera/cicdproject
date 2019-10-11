@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+steps:
+- name: build2
+  image: maven:3.5.0-alpine
+  commands:
+    - mvn -B clean package 
+- name: create-container
+  image: plugins/docker
+  settings:
+    auth: oFzFuHEmJNQbFoBnoM37
+    repo: registry.gitlab.com/vincenzofodera/testproject
+    registry: registry.gitlab.com
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
