@@ -1,4 +1,4 @@
-# Spring Data REST and JPA Example
+# Spring Data REST and JPA Example 
 This project depicts the Spring Boot Example with Spring Data REST and JPA Example
 
 ## Description
