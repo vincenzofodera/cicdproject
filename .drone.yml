@@ -18,15 +18,15 @@ steps:
 - name: deploy
   image: quay.io/honestbee/drone-kubernetes:master
   settings:
-    deployment: pod
+    deployment: springbootdemo-deployment
     kubernetes_server: 
       from_secret: KUBERNETES_SERVER
     # kubernetes_cert: ${KUBERNETES_CERT}
     kubernetes_token:
       from_secret: KUBERNETES_TOKEN
-    repo: registry.hkoerber.de/blog
-    container: blog
+    repo: registry.gitlab.com/vincenzofodera/testproject
+    container: springbootdemo
     tag: ${DRONE_COMMIT_SHA}
-    namespace: default
+    namespace: deploytest
     
       
