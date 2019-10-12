@@ -11,6 +11,7 @@ steps:
     auth: oFzFuHEmJNQbFoBnoM37
     repo: registry.gitlab.com/vincenzofodera/testproject
     registry: registry.gitlab.com
+    tags: ${DRONE_COMMIT_SHA}
     username:
       from_secret: docker_username
     password:
