@@ -30,3 +30,4 @@ steps:
       - KUBERNETES_SERVER
       # - KUBERNETES_CERT
       - KUBERNETES_TOKEN
+      
