@@ -15,3 +15,18 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
+- name: deploy
+  image: quay.io/honestbee/drone-kubernetes:master
+  settings:
+    deployment: pod
+    kubernetes_server: ${KUBERNETES_SERVER}
+    # kubernetes_cert: ${KUBERNETES_CERT}
+    kubernetes_token: ${KUBERNETES_TOKEN}
+    repo: registry.hkoerber.de/blog
+    container: blog
+    tag: ${DRONE_COMMIT_SHA}
+    namespace: default
+    secrets:
+      - KUBERNETES_SERVER
+      # - KUBERNETES_CERT
+      - KUBERNETES_TOKEN
