@@ -27,6 +27,6 @@ steps:
     repo: registry.gitlab.com/vincenzofodera/testproject
     container: springbootdemo
     tag: ${DRONE_COMMIT_SHA}
-    namespace: deploytest
+    namespace: default
     
       
